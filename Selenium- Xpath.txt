@@ -1,0 +1,20 @@
+Different ways of writing xpath
+
+1. tagname + one attribute  - //input[@name='radioButton']
+2. tagname + multiple attribute - //input[@name='radioButton' and @value='radio1'] ,  //input[@name='radioButton' or @value='radio1']
+3. tagname + visible text  - //legend[text()='Suggession Class Example']
+4. Regular expression
+	1. contains   - //legend[contains(text(),'Class Example')]    , //input[contains(@placeholder,'Select Countries')]
+	2. starts-With  - //legend[starts-with(text(),'Suggession')]
+	3. ends-With  - //legend[ends-with(text(),'Example')]
+5. Relationships
+	1. Preceding siblings - //input[@placeholder='Type to Select Countries']//preceding-sibling::legend
+	2. Following sibling - //legend[text()='Suggession Class Example']//following-sibling::input
+	3. Parent  - //legend[text()='Suggession Class Example']//parent::fieldset
+	4. child  - //label[@for='radio1']//child::input
+	5. following- (//label[@for='radio1']//following::input)[3]
+	6. preceding - //label[@for='radio1']//preceding::input
+
+6. Parent child navigation
+	1. //div[@id='checkbox-example']/fieldset/label[1]/input
+	2. (//div[@id='checkbox-example']/fieldset//input)[1]
